@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main(){
+
+   char l1, l2, l3, l4, l5, l6;
+    
+    scanf("%c %c %c\n", &l1, &l2, &l3);
+    scanf("%c %c %c", &l4, &l5, &l6);
+    
+    l1 = tolower(l1);
+    l2 = tolower(l2);
+    l3 = tolower(l3);
+    
+    l4 = tolower(l4);
+    l5 = tolower(l5);
+    l6 = tolower(l6);
+    
+    if(l1<=l2 && l2<=l3){
+        printf("%c %c %c\n", l1, l2, l3);
+    }
+    if(l1<=l3 && l3<=l2){
+        printf("%c %c %c\n", l1, l3, l2);
+    }
+    if(l2<=l1 && l1<=l3){
+        printf("%c %c %c\n", l2, l1, l3);
+    }
+    if(l2<=l3 && l3<=l1){
+        printf("%c %c %c\n", l2, l3, l1);
+    }
+    if(l3<=l1 && l1<=l2){
+        printf("%c %c %c\n", l3, l1, l2);
+    }
+    if(l3<=l2 && l2<=l1){
+        printf("%c %c %c\n", l3, l2, l1);
+    }
+    
+    if(l4<=l5 && l5<=l6){
+        printf("%c %c %c", l4, l5, l6);
+    }
+    if(l4<=l6 && l6<=l5){
+        printf("%c %c %c", l4, l6, l5);
+    }
+    if(l5<=l4 && l4<=l6){
+        printf("%c %c %c", l5, l4, l6);
+    }
+    if(l5<=l6 && l6<=l4){
+        printf("%c %c %c", l5, l6, l4);
+    }
+    if(l6<=l4 && l4<=l5){
+        printf("%c %c %c", l6, l4, l5);
+    }
+    if(l6<=l5 && l5<=l4){
+        printf("%c %c %c", l6, l5, l4);
+    }
+    
+return 0;
+}
