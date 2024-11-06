@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+
+int calcula_digito(char cpf[], int comeco, int fim);
+
+int main() {
+  
+  char cpf[15];
+
+  int cpf1, cpf2, cpf3, verifica;
+
+  scanf("%s", cpf);
+
+  while (strcmp(cpf, "FIM") != 0) {
+
+    cpf1 = calcula_digito(cpf, 0, 2);
+    cpf2 = calcula_digito(cpf, 4, 6);
+    cpf3 = calcula_digito(cpf, 8, 10);
+
+    verifica = cpf1 + cpf2 + cpf3;
+
+    if (verifica % 10 == cpf[12] - '0') {
+      printf("VALIDO\n");
+    } else {
+      printf("INVALIDO\n");
+    }
+    scanf("%s", cpf);
+  }
+  return 0;
+}
+
+int calcula_digito(char cpf[], int comeco, int fim) {
+
+  int maior = 0;
+  int i = 0;
+
+  for (i = comeco; i <= fim; i++) {
+    if (cpf[i] - '0' > maior) {
+      maior = cpf[i] - '0';
+    }
+  }
+  return maior;
+}
