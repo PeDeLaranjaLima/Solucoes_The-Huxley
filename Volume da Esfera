@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    float r, rr;
+    
+    scanf("%f", &r);
+
+   
+ 
+    printf("%.2f", (4*(3.1416*pow(r, 3)))/3);
+    
+	return 0;
+}
