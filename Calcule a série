@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+
+float s, soma;
+  float i;
+  
+  scanf("%f", &s);
+
+  if(s==0){
+   printf("%.2f", s);
+    return 0;
+  }  
+
+  for(i=1; i<=s; i++){
+
+    printf("%.0f/%.0f", i, i*3);
+    
+    soma = soma + i/(i*3);
+    
+    if(i<s){
+      printf(" + ");
+    }
+  }
+  printf("\n%.2f", soma);
+  
+  return 0;
+}
