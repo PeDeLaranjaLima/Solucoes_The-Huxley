@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main(void) {
+
+  int n;
+  int i;
+  int pos;
+  int menor = 0;
+  
+  scanf("%d", &n);
+
+  int lista[n];
+
+//La�o para receber os valores
+  for (i = 0; i < n ; i++){
+    scanf("%d", &lista[i]);
+ } 
+
+//Guardar o menor valor na posi��o 0 inicial
+  menor = lista[0];
+  pos = 0;
+  //Atualizar a posi��o e compara os valores, de forma a atualizar a lista
+  for(i=1; i < n; i++){
+    if(menor > lista[i]){
+      menor = lista[i];
+      pos = i;
+      }
+    }  
+  
+  printf("Menor valor: %d\n", menor);
+  printf("Posicao: %d", pos);
+ 
+  return 0;
+}
