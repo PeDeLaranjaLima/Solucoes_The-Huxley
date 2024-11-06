@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int dias;
+    int diasKm;
+    int km;
+    float z; 
+    
+    scanf("%d%d", &dias, &km);
+    
+    diasKm = (floor)(dias * 100);
+    float taxa = (floor) ((km-diasKm)*12);
+    
+    if (km > diasKm){
+        
+    z = taxa + (dias*90);    
+    
+    printf("%.2f", z); 
+    
+    } 
+
+    if (km < diasKm){ 
+    
+    z = dias*90;
+    
+    printf("%.2f", z); 
+    
+    }
+
+	return 0;
+}
