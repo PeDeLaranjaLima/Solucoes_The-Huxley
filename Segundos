@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int s;
+    int h;
+    int m;
+    int ss;
+    
+    scanf("%d", &s);
+    
+    h = s/3600;
+    m = (s%3600)/60;
+    ss = s%60;
+
+    printf("%d h %d m %d s", h, m, ss);
+    
+	return 0;
+}
