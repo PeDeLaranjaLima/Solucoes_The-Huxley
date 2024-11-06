@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int mdc(int num1, int num2){
+    
+    int resul = num1 % num2;
+    
+    if(resul == 0){
+        return num2;
+    }else{
+        return mdc(num2, resul);
+    }
+  }
+
+
+
+int main() {
+    
+    int n, m, menor, maior;
+    
+    scanf("%d %d", &n, &m);
+
+      if(n < m){
+        menor = n;
+        maior = m;
+      }
+      if(n > m){
+        menor = m;
+        maior = n;
+      }
+      
+    printf("%d", mdc(menor, maior));
+    
+	return 0;
+}
