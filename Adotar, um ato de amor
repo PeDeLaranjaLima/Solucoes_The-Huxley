@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+  int idadeAdot;
+  int idadeCri;
+  char irmao;
+  char conjunta;
+  char casados_uniEst;
+  char paisDesc_destPodFam;
+  char consentPais;
+  char consentAdotando;
+
+  scanf("%d", &idadeAdot);
+  scanf(" %c", &irmao);
+  scanf(" %c", &conjunta);
+  scanf(" %c", &casados_uniEst);
+  scanf("%d", &idadeCri);
+  scanf(" %c", &paisDesc_destPodFam);
+  scanf(" %c", &consentPais);
+  scanf(" %c", &consentAdotando);
+
+  if((idadeAdot<18) || (irmao=='S') || (conjunta=='S'&&casados_uniEst=='N') || ((idadeAdot-idadeCri)<16) || (paisDesc_destPodFam=='N'&&consentPais=='N') || (idadeCri>=12&&consentAdotando=='N')){
+    printf("Nao pode adotar");
+  } 
+  else printf("Pode adotar");
+    
+	return 0;
+}
