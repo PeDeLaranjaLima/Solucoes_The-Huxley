@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    float x;
+    
+    scanf("%f", &x);
+    
+    float trunc5 = floor( x * 100000.0f ) / 100000.0f;
+    float trunc2 = floor( x * 100.0f ) / 100.0f;
+    
+    printf("|%.2f|\n", trunc2);
+    printf("|%.5f|\n", trunc5);
+    printf("|      %.1f|\n", x);
+    printf("|%.1f      |\n", x);
+    
+	return 0;
+}
