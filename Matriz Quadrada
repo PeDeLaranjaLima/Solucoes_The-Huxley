@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int num;
+    int m = 2, k = 1;
+    int i;
+    int qtd = 1;
+    int j;
+
+  scanf("%d", &num);
+  while(num != 0){
+    for(i = 0; i < num; i++){
+      for(j = 0; j < num; j++){  
+        printf("%d", qtd);
+          qtd = qtd * 2;
+          if(j < num - 1){
+            printf(" ");
+          } 
+      }
+      if(i < num){
+        m = pow(2, k);
+        qtd = m;
+        k++;
+      }
+    printf("\n");
+  } 
+  k = 1;
+  scanf("%d", &num);
+  qtd = 1;
+
+  printf("\n");
+  
+    /*for(i = 0; k < num; i++){
+        printf("\n");
+          if(matriz[k][j] < matriz[k][j])    {
+          printf(" ");
+          }
+       for(j = 0; j < num; j++){ 
+         printf("%d", matriz[k][j]);
+       }
+     }*/
+ } 
+  return 0;
+}
