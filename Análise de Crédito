@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    float salario;
+    float salCom;
+    float credito;
+    float emprestimo;
+    
+    scanf("%f %f", &salario, &salCom);
+    
+    credito = salario*0.30;
+    
+    if (salCom < credito){
+        
+    emprestimo = credito - salCom;
+        
+        printf("%.2f", emprestimo);
+        
+    }
+    if (salCom > credito){
+        
+        emprestimo = 0.0;
+        
+        printf("%.2f", emprestimo);
+        
+    }
+    
+	return 0;
+}
