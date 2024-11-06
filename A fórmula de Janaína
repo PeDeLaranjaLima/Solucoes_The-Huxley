@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+  int n1;
+  int n2;
+  int i;
+  int a;
+  int b;
+  int menor;
+  int maior;
+
+  scanf("%d %d", &n1, &n2);
+
+  if(n1<n2){
+     menor = n1;
+     maior = n2;
+  }
+
+  if(n1>n2){
+     menor = n2;
+     maior = n1;
+    }
+  
+  for(i=menor; i<=maior; i++){
+    
+    a = pow(i, 2)-4*i+5;
+    
+   printf("%d\n", a);
+  }
+  
+  return 0;
+}
