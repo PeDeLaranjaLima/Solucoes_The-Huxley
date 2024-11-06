@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h> 
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    float media;
+    int aulas;
+    int faltas;
+    
+    scanf("%f %d%d", &media, &aulas, &faltas);
+    
+    float frequencia = (floor)((aulas/faltas)*100);
+    
+    if(frequencia >= 75 && media >= 5){
+       printf("APROVADO"); 
+    }
+    if(frequencia >= 50 && media >= 7){
+       printf("REPROVADO"); 
+    }
+    if(frequencia < 50 || media < 5){
+       printf("REPROVADO"); 
+    }
+    
+    
+	return 0;
+}
