@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+
+  int por;
+  int mat;
+  int cont=0;
+  float red;
+
+  do{
+    scanf("%d ", &por); 
+    scanf("%d ", &mat);
+    scanf("%f", &red);
+    
+    if(por >= 40 && mat >= 21 && red >= 7){
+      cont++;
+    }
+  }while(por>=0);
+    
+  printf("%d", cont);
+  
+  return 0;
+}
