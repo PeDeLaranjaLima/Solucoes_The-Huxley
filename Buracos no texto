@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+
+  int qtd, tam = 0;
+  int i = 0;
+  int cont = 0;
+  int contb = 0;
+  int contsb = 0;
+
+  scanf("%d", &qtd);
+
+  char frase[101];
+
+  for(i = 0; i < qtd; i++){
+    
+    scanf("%s", frase);
+    
+    cont = 0;
+    contb = 0;
+    contsb = 0;
+    tam = 0;
+    
+      for(int j = 0; j <= 100; j++){
+        if(frase[j] == '\0') break;
+        tam++;
+      }
+  
+    
+      for(int j = 0; j < tam; j++){
+         if(frase[j] == 'Q' || frase[j] == 'R' || frase[j] == 'O' || frase[j] == 'P' || frase[j] == 'A' || frase[j] == 'D'){
+           cont++;
+         }
+        if(frase[j] == 'B'){
+          contb++;
+        }
+      } 
+    
+    printf("%d\n", cont+2*contb);
+  }
+  
+  return 0;
+}
