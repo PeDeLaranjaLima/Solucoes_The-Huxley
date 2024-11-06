@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <inttypes.h>
+
+#define MAX 100
+
+long long int fib_helper(int n, long long int memo[]) {
+    if (memo[n] != -1) {
+        return memo[n];
+    }
+    if (n == 0) {
+        memo[n] = 0;
+    } else if (n == 1) {
+        memo[n] = 1;
+    } else {
+        memo[n] = fib_helper(n - 1, memo) + fib_helper(n - 2, memo);
+    }
+    return memo[n];
+}
+
+long long int fib(int n) {
+    long long int memo[MAX];
+    int i;
+    for (i = 0; i < MAX; i++) {
+        memo[i] = -1;
+    }
+    return fib_helper(n, memo);
+}
+
+int main() {
+    int tam, i;
+    scanf("%d", &tam);
+    for (i = tam-1; i > -1; i--) {
+        printf("%lld ", fib(i));
+    }
+    return 0;
+}
