@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void) {
+
+  int tri;
+  int i=1;
+
+  scanf("%d", &tri);
+
+  while((i*(i+1)*(i+2)) < tri){
+  i++;
+  }
+  if((i*(i+1)*(i+2)) == tri){
+      printf("%d * %d * %d = %d\nVerdadeiro", i, i+1, i+2, tri);
+    } 
+  else
+    printf("Falso");
+  return 0;
+}
