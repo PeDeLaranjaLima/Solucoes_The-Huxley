@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+  float colesterol;
+
+  scanf("%f", &colesterol);
+
+  if(colesterol < 150){
+    printf("Colesterol total %.1f mg/dl (DESEJAVEL)", colesterol);
+  }
+  if(colesterol >= 150 && colesterol <= 170){
+    printf("Colesterol total %.1f mg/dl (LIMITROFE)", colesterol);
+  }
+  if(colesterol > 170){
+    printf("Colesterol total %.1f mg/dl (ALTO)", colesterol);
+  }
+    
+	return 0;
+}
