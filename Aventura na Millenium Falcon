@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main(){
+  
+  int matriz[3][3];
+  
+  int i = 0;
+  int j = 0;
+
+  while(1) {
+   
+    for(i = 0; i < 3; i++){
+      for(j = 0; j < 3; j++){
+        scanf("%d", &matriz[i][j]);
+      }
+    }
+    
+    int verZeros = 1;
+    for(i = 0; i < 3; i++){
+      for(j = 0; j < 3; j++){
+        if(matriz[i][j] != 0){
+          verZeros = 0;
+          break;
+        }
+      }
+      if(!verZeros){
+        break;
+      }
+    }
+    if(verZeros){
+      break;
+    }
+
+    //if(matriz[i][j] == 0 && i > j)
+    if(matriz[0][1] == 0 && matriz[0][2] == 0 && matriz[1][2] == 0){
+      printf("Por cima\n");
+    }
+      //if(matriz[i][j] == 0 && i < j)
+    else if(matriz[1][0] == 0 && matriz[2][0] == 0 && matriz[2][1] == 0){
+      printf("Por baixo\n");
+    }
+    //if(matriz[i][j] != 0 && i > j && matriz[i][j] != 0 && i < j)
+    else{ 
+      printf("Nao pode atravessar\n");
+    }
+
+    for(i = 0; i < 3; i++){
+      for(j = 0; j < 3; j++){
+        matriz[i][j] = 0;
+      }
+    }
+  }
+  
+  return 0;
+}
