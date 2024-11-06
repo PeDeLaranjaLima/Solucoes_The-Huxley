@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+
+ float media = 0;
+ float somatorio = 0;
+ int n;
+ int i = 0;
+ int contm = 0;
+ int contn = 0;
+
+
+//Recebe o tamanho do vetor 
+ scanf("%d", &n);
+
+//O n�mero de alunos � o tamanho que indica a quantidade de notas
+ float notas[n];
+
+//Esse la�o serve para receber a quantidade de notas em rela��o ao n�mero de alunos, ou seja entanto cont for menor que n, ele recebe valores e soma eles, essa opera��o � feita na vari�vel somatorio
+  for(int cont = 0; cont < n; cont++){
+    scanf("%f", &notas[i]);
+
+    somatorio += notas[i];
+    
+    i++;
+  }
+
+
+ media = somatorio/n;
+
+//Esse la�o � para repetir o comando de decis�o de acordo com o tamanho do vetor, de forma que a cada vez ele decida a quantdade de alunos acima ou abaxo da m�dia, de acordo com os crit�rios da quest�o  
+  for (int i2 = 0; i2 < n; i2++){
+    if(notas[i2] <= media - media*0.10){
+      contm++;
+    } 
+    if(notas[i2] >= media + media*0.10){
+      contn++;
+    } 
+  }
+
+
+printf("%.2f\n%d\n%d", media, contn, contm);
+
+  
+  return 0;
+}
