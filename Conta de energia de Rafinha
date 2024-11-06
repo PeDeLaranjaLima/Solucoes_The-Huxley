@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+  
+  int vKwh;
+  float valor;
+
+  scanf("%d", &vKwh);
+
+
+      if(vKwh<=99){
+        valor = vKwh*1.35;
+        printf("%.2f\n1.35", valor);
+      }
+      if(vKwh>=100 && vKwh <= 299){
+        valor = vKwh*1.55;
+        printf("%.2f\n1.55", valor);
+      }
+      if(vKwh>=300 && vKwh <= 574){
+        valor = (vKwh*1.175)*1.10;
+        printf("%.2f\n1.75", valor);
+      }
+      if(vKwh>=575){
+        valor = (vKwh*2.15)*1.10;
+        printf("%.2f\n2.15", valor);
+      }
+      if (valor<=35){
+      printf("%f\n", valor);}
+return 0;
+}
