@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    float r;
+    float a;
+    float v;
+    
+    scanf("%f", &r);
+    
+    a = 4*3.1416*pow(r, 2);
+    v = (4*3.1416*pow(r, 3))/3;
+    
+    printf("%.2f\n%.2f", a, v);
+    
+	return 0;
+}
