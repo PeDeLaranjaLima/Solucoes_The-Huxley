@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    char frase[256];
+    int i, j, len;
+    int palindromo;
+
+    for (i = 0; i < n; i++) {
+        scanf(" %[^\n]", frase);
+
+        len = strlen(frase);
+
+        // Remove os espa�os da string
+        int k = 0;
+        for (j = 0; j < len; j++) {
+            if (frase[j] != ' ') {
+                frase[k++] = tolower(frase[j]);
+            }
+        }
+        frase[k] = '\0';
+
+        len = strlen(frase);
+
+        palindromo = 1;
+
+        for (j = 0; j < len/2; j++) {
+            if (frase[j] != frase[len-1-j]) {
+                palindromo = 0;
+                break;
+            }
+        }
+
+        if (palindromo) {
+            printf("SIM\n");
+        } else {
+            printf("NAO\n");
+        }
+    }
+
+    return 0;
+}
