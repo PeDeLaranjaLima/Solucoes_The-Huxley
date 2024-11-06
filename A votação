@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int qturmas;
+    int qalunos;
+    int cont;
+    int cont1;
+    int pokemon=0;
+    int cavaleiros=0;
+    char anime;
+
+    scanf("%d", &qturmas);
+    
+    for(cont=0; cont<qturmas; cont++){
+        scanf("%d", &qalunos);
+          for(cont1=0; cont1<qalunos; cont1++){
+              scanf(" %c", &anime);
+               if(anime == 'p'){
+                 pokemon++;
+               }
+               if(anime == 'c'){
+                 cavaleiros++;
+               }
+          }
+   }
+  
+   if(cavaleiros>pokemon){
+     printf("\nCavaleiros do zodiaco ganhou e teve o total de %d votos", cavaleiros);
+   }
+   if(cavaleiros<pokemon){
+     printf("\nPokemon ganhou e teve o total de %d votos", pokemon);
+   }
+
+    return 0;
+}
