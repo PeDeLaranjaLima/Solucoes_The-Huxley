@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main () { 
+
+float amostra; 
+
+scanf("%f", &amostra);
+
+
+if (amostra < 7){ 
+
+printf ("Acida"); 
+
+}
+if (amostra == 7){ 
+
+printf ("Neutra"); 
+
+} 
+
+if (amostra > 7){ 
+
+printf ("Basica"); 
+
+} 
+
+return 0; 
+
+}
