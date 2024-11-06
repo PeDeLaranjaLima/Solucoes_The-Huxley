@@ -1,0 +1,26 @@
+  #include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int num=0;
+    int cont=1;
+    int cont1=1;
+    
+    scanf("%d", &num);
+    
+    while (cont <= num){
+        cont1=1;
+        while (cont1<cont){
+            printf("%d ", cont1);
+            cont1++;
+        }
+        printf("%d\n", cont1);
+        cont++;
+    }
+    
+    
+    return 0;
+}
