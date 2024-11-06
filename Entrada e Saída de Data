@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int dd;
+    int mm;
+    int aa;
+    
+    scanf("%d/%d/%d", &dd, &mm, &aa);
+    
+    
+    printf("%2.2d/%2.2d/%2.2d\n", mm, dd, aa);
+    printf("%2.2d/%2.2d/%2.2d\n", aa, mm, dd);
+    printf("%2.2d-%2.2d-%2.2d\n", dd, mm, aa);
+    
+	return 0;
+    
+}
