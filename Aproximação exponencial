@@ -1,0 +1,35 @@
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+
+  int vexpon;
+  int vtermo;
+  int fatorial=1;
+  int i;
+  double resul=1.00;
+
+  scanf("%d %d", &vexpon, &vtermo);
+
+    //Calcula o fatorial
+    for (i = 1; i < vtermo; i++) {
+      fatorial = fatorial * i;
+      resul += (pow(vexpon, i)/fatorial);
+    }
+
+  if (pow(2.718281,vexpon) - resul > (pow(2.718281,vexpon)* 0.10)) {
+    printf("%.3lf\n", resul);
+    printf("A aproximacao foi pouco precisa");
+  }
+  if (pow(2.718281,vexpon) - resul > (pow(2.718281,vexpon)* 0.01) && 
+pow(2.718281,vexpon) - resul < (pow(2.718281,vexpon)* 0.10)) {
+    printf("%.3lf\n", resul);
+    printf("A aproximacao foi muito precisa");
+  }
+  if (pow(2.718281,vexpon) - resul < (pow(2.718281,vexpon)* 0.01)) {
+    printf("%.3lf\n", resul);
+    printf("Os valores sao praticamente iguais");
+  }
+
+  return 0;
+}
