@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void) {
+
+  int pregos=0;
+  int caixa = 0;
+  float preco = 0;
+  int n;
+  
+    do{
+      scanf("%d", &n);
+      if (n%2==0){
+        pregos = pregos + n;
+      }
+    } while(n%2==0);
+      caixa = (pregos/12)+1;
+
+  preco = caixa*7.89;
+  
+ printf("%.2f\n%d", preco, (caixa*12) -pregos); 
+  
+  return 0;
+  } 
