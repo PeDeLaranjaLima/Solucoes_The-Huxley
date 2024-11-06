@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+
+void identfica_ani(char animal1[101], char animal2[101], char animal3[101]){
+
+  if(strcmp(animal1, "vertebrado") == 0){
+    
+        if(strcmp(animal2, "mamifero") == 0){
+            if(strcmp(animal3, "herbivoro") == 0){
+                printf("vaca");
+            }else{
+                printf("homem");
+            }    
+        }
+        if(strcmp(animal2, "ave") == 0){
+            if(strcmp(animal3, "carnivoro") == 0){
+              printf("aguia");
+            }else{
+                printf("pomba");
+            } 
+        }   
+  }
+ 
+   if(strcmp(animal1, "invertebrado") == 0){
+      
+          if(strcmp(animal2, "inseto") == 0){
+              if(strcmp(animal3, "herbivoro") == 0){
+                printf("lagarta");
+            }else{
+                printf("pulga");
+            }    
+        }
+        if(strcmp(animal2, "anelideo") == 0){
+            if(strcmp(animal3, "onivoro") == 0){
+              printf("minhoca");
+            }else{
+                printf("sanguessuga");
+            } 
+        }   
+   }
+}
+
+int main() {
+
+  char animal1[101], animal2[101], animal3[101];
+
+  scanf("%s %s %s", animal1, animal2, animal3);
+
+  identfica_ani(animal1, animal2, animal3);
+  
+  return 0;
+}
