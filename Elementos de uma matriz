@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+int main() {
+   
+   int i;
+   int j;
+   int m;
+   int n;
+   int soma = 0;
+   int somasec = 0;
+   int limite = 0;
+   int contp = 0;
+   int contn = 0;
+  
+   scanf("%d %d", &m, &n);
+    
+   int matriz[m][n];
+   limite = n;
+  
+  //Recebe os valores, de forma que o primeiro for ? para as linhas e o segundo para as colunas
+    for(i = 0; i < m; i++){
+      for(j = 0; j < n; j++){
+         scanf("%d", &matriz[i][j]);
+      }
+    }
+  
+  //Analisa a diagonal principal e soma seus valores
+    
+    for(i = 0; i < m; i++){
+      for(j = 0; j < n; j++){ 
+         if(i == j){
+           soma = soma + matriz[i][j];
+         }
+      } 
+    } 
+  //Analisa a diagonal secund?ria e soma seus valores
+    for(i = 0; i < m; i++){
+      for(j = n-1; j >= 0; j--){ 
+        if(i == (n-1) - j){
+           somasec = somasec + matriz[i][j];
+        }
+      } 
+    } 
+  
+    printf("Matriz formada:"); 
+
+  //Posta amatriz, tem que ter um la?o para postara  amatriz inteira, e colocar o espa?o apenas 
+      for(i = 0; i < m; i++){
+        printf("\n");
+          (matriz[m][n] <= matriz[i][j]);
+       for(j = 0; j < n-1; j++){ 
+         printf("%d ", matriz[i][j]);
+       }printf("%d", matriz[i][j]);
+     } 
+
+    printf("\n");
+        
+    if(m == n){
+     printf("A diagonal principal e secundaria tem valor(es) %d e %d respectivamente.\n", soma, somasec);
+    }
+    if(m != n){
+      printf("A diagonal principal e secundaria nao pode ser obtida.\n");
+    }
+
+    for(i = 0; i < m; i++){
+      for(j = 0; j < n; j++){
+        if(matriz[i][j] > 0){
+          contp++;
+        }
+        if(matriz[i][j] < 0){
+          contn++;
+        }
+      }
+    }
+    
+    printf("A matriz possui %d numero(s) menor(es) que zero.\n", contn); 
+    printf("A matriz possui %d numero(s) maior(es) que zero.\n", contp); 
+   
+  
+return 0;
+}
