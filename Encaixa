@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int encaixa(int a, int b)
+{
+if (b > a) {
+    return 0;
+  }
+  if (a == 0) {
+    return 0;
+  }
+  if (a >= 0 && a < 100) {
+    return 0;
+  }
+  if (a >= 100 && a <= 999) {
+    if (a == b) {
+      return 1;
+    }
+  }
+  if (a >= 1000) {
+    if (a % 1000 == b || a == b) {
+     //printf("\n");
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+}
+
+int main(void) 
+{
+    int x, y;
+    
+    scanf("%d%d", &x, &y);
+    while (x != -1) // l� enquanto x for diferente de -1
+    {
+        printf("%d\n", encaixa(x, y) );
+        scanf("%d%d", &x, &y);
+    }
+	return 0;
+}
+
