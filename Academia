@@ -1,0 +1,73 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+  char nome[51];
+  int senha;
+  char situacao;
+} tAluno;
+
+int main() {
+
+  int i = 0;
+  int n = 0;
+
+  int contp = 0;
+  int contf = 0;
+
+  // int senhas[10000];
+
+  tAluno alunos[100];
+
+  //fgets(alunos[i].nome, 50, stdin);
+  scanf("%[^\n]s", alunos[i].nome);
+
+  char letra;
+
+  while (strcmp(alunos[i].nome, "SAIR") != 0) {
+
+    scanf("%d", &alunos[i].senha);
+    scanf(" %c", &alunos[i].situacao);
+
+   scanf("%c", &letra);
+    
+    //printf("%s", alunos[i].nome);
+    
+    n++;
+    i++;
+
+    scanf("%[^\n]s", alunos[i].nome);
+    //fgets(alunos[i].nome, 50, stdin);
+  }
+
+  int senhas;
+  int cont = 0;
+
+  scanf("%d", &senhas);
+
+  while (senhas > 0) {
+
+    for (i = 0; i < n; i++) {
+    
+      if (alunos[i].senha == senhas && alunos[i].situacao == 'P') {
+        printf("%s, seja bem-vindo(a)!\n", alunos[i].nome);
+        cont++;
+        break;
+      }
+      if(alunos[i].senha == senhas && alunos[i].situacao != 'P'){
+        printf("N�o est� esquecendo de algo, %s? Procure a recep��o!\n",
+               alunos[i].nome);
+        cont++;
+        break;
+      }
+    }
+    if (alunos[i].senha != senhas && cont == 0 ) {
+        printf("Seja bem-vindo(a)! Procure a recep��o!\n");
+      }
+    scanf("%d", &senhas);
+    cont = 0;
+  }
+  return 0;
+}
