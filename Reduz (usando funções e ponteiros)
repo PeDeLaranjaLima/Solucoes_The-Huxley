@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void fazReducao(float *a, float *b) {
+
+  float temp;
+
+  temp = *b - *a;
+  //*a = *b - *a;
+  //*a = temp;
+  if(*a > *b){printf("%.2f %.2f", temp*-1, *b);}
+  if(*a < *b){printf("-%.2f %.2f", temp, *b);} 
+  if(*a == *b){printf("%.2f %.2f", temp, *b);} 
+}
+
+int main() {
+
+  float x;
+  float y;
+
+  scanf("%f%f", &x, &y);
+
+  fazReducao(&x, &y);
+
+  //printf("%.2f %.2f\n", x, y);
+
+  return 0;
+}
