@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int tamstr(char* frase){
+  int contm = 0;
+  
+  while(frase[contm] != '\0'){contm++;}
+  printf("%d\n", contm);
+  
+}
+
+int main() {
+
+  int i = 0;
+  //int contm = 0;
+  char *frase;
+  
+  frase = (char *)malloc(101 * sizeof(char));
+
+  scanf("%s", frase);
+
+  while(strcmp(frase, "FIM") != 0){
+
+  tamstr(frase);
+    
+   scanf("%s", frase);
+    
+  }
+  
+  return 0;
+}
