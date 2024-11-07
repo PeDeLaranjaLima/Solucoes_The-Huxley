@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+  char nome[50];
+  float vendas;
+  int undTrab;
+  char gerResp[50];
+} tVendedor;
+
+void buscarMelhorPior(tVendedor vetor[], int tamanho) {
+
+  int i = 0;
+  tVendedor Vendedormelhor = vetor[0];
+  tVendedor Vendedorpior = vetor[0];
+
+  for (i = 1; i < tamanho; i++) {
+    if (vetor[i].vendas > Vendedormelhor.vendas) {
+      Vendedormelhor = vetor[i];
+    }
+    if (vetor[i].vendas < Vendedorpior.vendas) {
+      Vendedorpior = vetor[i];
+    }
+  }
+
+  printf("Melhor vendedor: %s\nVendas: R$ %.2f\nUnidade: %d\nGerente: %s\n\n",
+         Vendedormelhor.nome, Vendedormelhor.vendas, Vendedormelhor.undTrab,
+         Vendedormelhor.gerResp);
+
+  printf("Pior vendedor: %s\nVendas: R$ %.2f\nUnidade: %d\nGerente: %s\n\n",
+         Vendedorpior.nome, Vendedorpior.vendas, Vendedorpior.undTrab,
+         Vendedorpior.gerResp);
+}
+
+void buscarVendendor(char nome[], int tamanho, tVendedor vetor[]) {
+
+  int i = 0;
+  int cont = 0;
+
+  for (i = 0; i < tamanho; i++) {
+    if (strcmp(nome, vetor[i].nome) == 0) {
+      printf("Nome: %s\nVendas: R$ %.2f\nUnidade: %d\nGerente: %s\n\n",
+             vetor[i].nome, vetor[i].vendas, vetor[i].undTrab,
+             vetor[i].gerResp);
+      cont++;
+    }
+  }
+  if (cont == 0) {
+    printf("NAO ENCONTRADO\n\n");
+  }
+}
+
+int main() {
+
+  int qtdVend;
+  char pesVend[100];
+
+  int i = 0;
+  int m = 0;
+
+  scanf("%d", &qtdVend);
+
+  tVendedor vendedores[qtdVend];
+
+  for (i = 0; i < qtdVend; i++) {
+
+    scanf(" %[^\n]s", vendedores[i].nome);
+    scanf("%f", &vendedores[i].vendas);
+    scanf("%d", &vendedores[i].undTrab);
+    
+    scanf(" %[^\n]s",vendedores[i].gerResp);
+  }
+
+  buscarMelhorPior(vendedores, qtdVend);
+
+  char vendedoresdois[100];
+
+  scanf(" %[^\n]s",vendedoresdois);
+
+  while (strcmp(vendedoresdois, "ok") != 0) {
+
+    buscarVendendor(vendedoresdois, qtdVend, vendedores);
+
+    scanf(" %[^\n]s",vendedoresdois);
+    m++;
+  }
+  return 0;
+}
