@@ -1,0 +1,31 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int m, n, i, j, par;
+
+    scanf("%d%d", &m, &n);
+
+    int matriz[m][n];
+
+    par = 2;
+  
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            matriz[i][j] = par;
+            par += 2;
+        }
+    }
+
+    for (j = 0; j < n; j++) {
+        for (i = 0; i < m/n; i++) {
+            printf("%d", matriz[i][j]);
+            if(i < m/n - 1){
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
