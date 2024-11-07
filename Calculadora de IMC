@@ -1,0 +1,59 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+  char nome[100];
+  float peso;
+  float altura;
+} tCientista;
+
+int main() {
+
+  int n;
+  int i = 0;
+  float imc = 0;
+
+  scanf("%d ", &n);
+
+  tCientista cientistas[n];
+
+  for (i = 0; i < n; i++) {
+
+    //fgets(cientistas[i].nome, 50, stdin);
+    //scanf("%[^\n]s", cientistas[i].nome);
+    gets(cientistas[i].nome);
+    
+
+    scanf(" %f %f", &cientistas[i].peso, &cientistas[i].altura);
+    getchar();
+  }
+
+  for (i = 0; i < n; i++) {
+
+    imc = cientistas[i].peso / pow(cientistas[i].altura, 2);
+
+    if (imc < 18.5) {
+      printf("%s:\nBaixo peso\n\n", cientistas[i].nome);
+    }
+    if (imc >= 18.5 && imc <= 24.9) {
+      printf("%s:\nPeso normal\n\n", cientistas[i].nome);
+    }
+    if (imc >= 25 && imc <= 29.9) {
+      printf("%s:\nSobrepeso\n\n", cientistas[i].nome);
+    }
+    if (imc >= 30 && imc <= 34.9) {
+      printf("%s:\nObesidade grau I\n\n", cientistas[i].nome);
+    }
+    if (imc >= 35 && imc <= 39.9) {
+      printf("%s:\nObesidade grau II\n\n", cientistas[i].nome);
+    }
+    if (imc >= 40) {
+      printf("%s:\nObesidade grau III\n\n", cientistas[i].nome);
+    }
+  }
+  return 0;
+}
+
+
